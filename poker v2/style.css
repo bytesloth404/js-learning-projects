@@ -11,13 +11,14 @@ body {
 }
 
 .main-container {
-    width: 96vw;
-    height: 96vh;
+    width: 92vw;
+    height: 92vh;
     background-color: #FFE1A8;
     display: flex;
     justify-content: left;
     align-items: center;
     flex-flow: column;
+    box-shadow: 20px 20px #2b1e21;
 }
 
 .header {
@@ -59,4 +60,130 @@ body {
     box-shadow: 4px 4px #201a1b;
     font-weight: 900;
     margin-right: 40px;
+}
+
+
+.buttons-div {
+    background-color: #462c2f;
+    height: 10%;
+    width: 100%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #201a1b;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttons-div button {
+    font-size: 1.2rem;
+    font-family: 'DotGothic16', sans-serif;
+    background-color: #713c44;
+    color: white;
+    box-shadow: 5px 5px #201a1b;
+    border: solid;
+    border-width: 2px;
+    border-color: #1f191a;
+    padding: 10px 70px;
+    cursor: pointer;
+}
+
+.buttons-div button:hover {
+    background-color: #ffe1a8;
+    color: black;
+}
+
+.buttons-div button:active {
+    box-shadow: 2px 2px;
+}
+
+
+.play-area {
+    background-color: #723d45;
+    height: 75%;
+    width: 100%;
+    border-style: solid;
+    border-width: 4px;
+    border-top: none;
+    border-color: #1f191a;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.player-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50px;
+    background-color: #c9cba3;
+    padding: 2rem 2rem;
+    border: solid;
+    border-width: 4px;
+    border-color: #201a1b;
+    box-shadow: 5px 5px #201a1b;
+}
+
+
+.name, 
+.cpu-name {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.player-cards-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.card {
+    width: 70px;
+    height: 100px;
+    background-color: #fff7df;
+    border: solid;
+    border-color: #201a1b;
+    box-shadow: 3px 3px #201a1b;
+    margin: 0px 15px;
+
+}
+
+.table-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e26e5c;
+    border: solid;
+    border-width: 5px;
+    border-color: #f9dba3;
+    padding: 20px 30px;
+    border-radius: 100px;
+
+}
+
+
+.community-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.computer-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 50px;
+    background-color: #ffe1a8;
+    padding: 2rem 2rem;
+    border: solid;
+    border-width: 4px;
+    border-color: #201a1b;
+    box-shadow: 5px 5px #201a1b;
 }
