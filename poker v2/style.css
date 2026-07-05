@@ -33,12 +33,12 @@ body {
     border-width: 4px;
 }
 
-#text1{
+#no-of-player{
     font-weight: 700;
 }
 
 
-#text2 {
+#game-name {
     font-size: 4rem;
 }
 
@@ -135,7 +135,7 @@ body {
     margin-bottom: 20px;
 }
 
-.player-cards-container {
+.cards-container {
     display: flex;
     flex-direction: row;
 }

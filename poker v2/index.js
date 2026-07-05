@@ -1,8 +1,8 @@
-const startRoundButton = document.getElementById(`startRound`);
-const dealFlopButton = document.getElementById(`dealFlop`);
-const dealTurnButton = document.getElementById(`dealTurn`);
-const dealRiverButton = document.getElementById(`dealRiver`);
-const showWinnerButton = document.getElementById(`showWinner`);
+const startRoundButton = document.getElementById(`startRoundBtn`);
+const dealFlopButton = document.getElementById(`dealFlopBtn`);
+const dealTurnButton = document.getElementById(`dealTurnBtn`);
+const dealRiverButton = document.getElementById(`dealRiverBtn`);
+const showWinnerButton = document.getElementById(`showWinnerBtn`);
 
 
 
@@ -324,47 +324,58 @@ let gameState = { //tracking the progress of the game
     player2Cards : [], 
     communityCards :[],
     pot : 0,
-    stage : `preflop`,
+    stage : ``,
     winner : null
 };
 
 startRoundButton.addEventListener("click", () => {
-    shuffle(gameState.deck);
-    gameState.player1Cards = [];
-    gameState.player2Cards = [];
-    cardDealer(gameState.deck, gameState.player1Cards, 2);
-    cardDealer(gameState.deck, gameState.player2Cards, 2);
-    gameState.communityCards = [];
-    gameState.stage = 'preflop';
-    console.log(gameState.player1Cards);
-    console.log(gameState.player2Cards);
+    if (gameState.stage === ``) {
+        shuffle(gameState.deck);
+        gameState.player1Cards = [];
+        gameState.player2Cards = [];
+        cardDealer(gameState.deck, gameState.player1Cards, 2);
+        cardDealer(gameState.deck, gameState.player2Cards, 2);
+        gameState.communityCards = [];
+        gameState.stage = 'preflop';
+        document.getElementById(``)
+        console.log(gameState.player1Cards);
+        console.log(gameState.player2Cards);
+    }
 });
 
 
 
 dealFlopButton.addEventListener("click", (event) => {
-    cardDealer(gameState.deck, gameState.communityCards, 3);
-    gameState.stage = `flop`;
-    console.log(gameState.communityCards);
+    if (gameState.stage === `preflop`) {
+        cardDealer(gameState.deck, gameState.communityCards, 3);
+        gameState.stage = `flop`;
+        console.log(gameState.communityCards);
+    }
+    
 });
 
 
 dealTurnButton.addEventListener("click", () => {
-    cardDealer(gameState.deck, gameState.communityCards, 1);
-    gameState.stage = `turn`;
-    console.log(gameState.communityCards);
+    if (gameState.stage === `flop`) {
+        cardDealer(gameState.deck, gameState.communityCards, 1);
+        gameState.stage = `turn`;
+        console.log(gameState.communityCards);
+    }
 })
 
 dealRiverButton.addEventListener("click", () => {
-    cardDealer(gameState.deck, gameState.communityCards, 1);
-    gameState.stage = `River`;
-    console.log(gameState.communityCards);
+    if (gameState.stage === `turn`) {
+        cardDealer(gameState.deck, gameState.communityCards, 1);
+        gameState.stage = `river`;
+        console.log(gameState.communityCards);
+    }
 })
 
 showWinnerButton.addEventListener("click", () => {
-    let player1Hand = handMaker(gameState.communityCards, gameState.player1Cards);
-    let player2Hand = handMaker(gameState.communityCards, gameState.player2Cards);
-    let winner = compareHands(player1Hand, player2Hand);
-
+    if (gameState.stage === `river`) {
+        let player1Hand = handMaker(gameState.communityCards, gameState.player1Cards);
+        let player2Hand = handMaker(gameState.communityCards, gameState.player2Cards);
+        let winner = compareHands(player1Hand, player2Hand);
+    }  
     console.log(winner);
 })
